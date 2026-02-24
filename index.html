@@ -1,169 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para ti, Rayitas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #444;
-            background-color: #e0e0e0;
-            overflow-x: hidden;
-            /* Patrón de huellitas */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath fill='%239c9c9c' fill-opacity='0.15' d='M54.7 24.4c-1.6-2.6-5-3.4-7.6-1.8 -2.6 1.6-3.4 5-1.8 7.6 1.6 2.6 5 3.4 7.6 1.8C55.5 30.4 56.3 27 54.7 24.4zM44.3 12.8c-2.3-2-5.8-1.7-7.8 0.6 -2 2.3-1.7 5.8 0.6 7.8 2.3 2 5.8 1.7 7.8-0.6C46.9 18.3 46.6 14.8 44.3 12.8zM31.4 16.3c-2.9-1-6.1 0.5-7.1 3.4 -1 2.9 0.5 6.1 3.4 7.1 2.9 1 6.1-0.5 7.1-3.4C35.8 20.5 34.3 17.3 31.4 16.3zM16.9 23.7c-2.8-1.2-6.1 0.1-7.3 2.9 -1.2 2.8 0.1 6.1 2.9 7.3 2.8 1.2 6.1-0.1 7.3-2.9C21 28.2 19.7 24.9 16.9 23.7zM36.4 36.9c-4.4-2.8-10.2-2.1-13.8 1.8 -2 2.1-2.6 5.2-1.5 8 1.3 3.6 5.5 6.9 10.1 7.5 1.2 0.2 2.5 0.2 3.7-0.1 4.5-1 8.5-4.6 9.3-9.1C44.9 41.5 41.4 40.1 36.4 36.9z'/%3E%3C/svg%3E");
-        }
-
-        .memorial-card {
-            background-color: #f8f8f8;
-            width: 100%;
-            max-width: 500px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-align: center;
-            border: 1px solid #dcdcdc;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: sadEntrance 1.5s ease-out forwards;
-        }
-
-        @keyframes sadEntrance {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .photo-container {
-            width: 100%;
-            height: 420px; 
-            overflow: hidden;
-            background-color: #ccc;
-            border-bottom: 4px solid #e0e0e0;
-        }
-
-        .photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%; 
-            filter: grayscale(20%);
-        }
-
-        .content {
-            padding: 30px 25px;
-        }
-
-        h1 {
-            font-family: 'Lora', serif;
-            color: #333;
-            margin: 0 0 5px 0;
-            font-size: 2.8rem;
-        }
-
-        .nicknames {
-            font-family: 'Lora', serif;
-            color: #777;
-            font-style: italic;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-
-        .grey-bar {
-            height: 3px;
-            width: 60px;
-            background-color: #bbb;
-            margin: 0 auto 25px auto;
-            border-radius: 2px;
-        }
-
-        .human-message {
-            line-height: 1.7;
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 30px;
-            text-align: left;
-            white-space: pre-line;
-        }
-        
-        .highlight-pain {
-            color: #222;
-            font-weight: 600;
-            font-family: 'Lora', serif;
-            display: block;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            padding-left: 15px;
-            border-left: 3px solid #999;
-        }
-
-        .dedication {
-            font-family: 'Lora', serif;
-            font-weight: 700;
-            color: #333;
-            font-size: 1.2rem;
-            margin-top: 40px;
-        }
-
-        .footer {
-            background-color: #f0f0f0;
-            padding: 15px;
-            font-size: 0.9rem;
-            color: #888;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .paw-icon {
-            color: #999;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2.4rem; }
-            .photo-container { height: 350px; }
-            .content { padding: 20px; }
-        }
-    </style>
+    <title>Memorial Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-
-    <div class="memorial-card">
-        <div class="photo-container">
-            <img src="rayitas.jpg" alt="Mi querido Rayitas">
-        </div>
-        
-        <div class="content">
-            <h1>Rayitas</h1>
-            <div class="nicknames">"Rayas" · "Rayuela"</div>
-            
-            <div class="grey-bar"></div>
-            
-            <div class="human-message">
-                Todavía no puedo creer que ya no estés aquí conmigo. La casa se siente inmensa y tan vacia sin ti. No eras solo mi gato, eras mi hijo, el que siempre estaba ahí.
-
-                <span class="highlight-pain">
-                Nunca olvidaré nuestro último momento. Ese maullido final me rompió mi alma, pero cuando me miraste a los ojos, lo entendí. Me buscaste solo para despedirte... Te fuiste mirándome, sabiendo que yo estaba ahí cuidándote hasta el final.
-                </span>
-                
-                Duele mucho soltarte, pero me consuela saber que no te fuiste solo. Te fuiste sintiendo mi cariño. Gracias por haberme elegido.
+    <header>
+        <h1>Memorial Dashboard</h1>
+    </header>
+    <main>
+        <section class="memorials">
+            <h2>In Loving Memory</h2>
+            <div class="memorial-card">
+                <h3>John Doe</h3>
+                <p>Beloved father and friend, forever in our hearts.</p>
             </div>
-
-            <p class="dedication">
-                Te voy a extrañar siempre, hijo mio.
-            </p>
-        </div>
-
-        <div class="footer">
-            Te llevaré siempre en mi corazòn <span class="paw-icon">09.01.2026</span>
-        </div>
-    </div>
-
+            <!-- More memorials can be added here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Dvyskz. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
